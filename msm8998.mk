@@ -321,3 +321,11 @@ PRODUCT_PACKAGES += vndk_package
 TARGET_MOUNT_POINTS_SYMLINKS := false
 
 $(call inherit-product, build/make/target/product/product_launched_with_p.mk)
+
+
+###################################################################################
+# This is the End of target.mk file.
+# Now, Pickup other split product.mk files:
+###################################################################################
+$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/legacy/*.mk)
+###################################################################################
