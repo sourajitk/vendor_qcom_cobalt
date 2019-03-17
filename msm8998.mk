@@ -5,6 +5,9 @@ DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8998/overlay
 TARGET_USES_AOSP_FOR_AUDIO := false
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_DISABLE_DASH := true
+USE_LIB_PROCESS_GROUP := true
+
+TARGET_SYSTEM_PROP := device/qcom/msm8998/system.prop
 
 # Default vendor configuration.
 ifeq ($(ENABLE_VENDOR_IMAGE),)
@@ -22,7 +25,7 @@ ifeq ($(ENABLE_VENDOR_IMAGE), true)
 endif
 
 TARGET_KERNEL_VERSION := 4.4
-TARGET_USES_NQ_NFC := true
+TARGET_USES_NQ_NFC := false
 
 ifeq ($(TARGET_USES_NQ_NFC),true)
 PRODUCT_COPY_FILES += \
@@ -104,7 +107,7 @@ PRODUCT_BOOT_JARS += telephony-ext
 PRODUCT_PACKAGES += telephony-ext
 
 ifneq ($(strip $(QCPATH)),)
-PRODUCT_BOOT_JARS += WfdCommon
+#PRODUCT_BOOT_JARS += WfdCommon
 #Android oem shutdown hook
 PRODUCT_BOOT_JARS += oem-services
 endif
@@ -120,6 +123,8 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := vendor/qcom/opensource/core-utils/
 
 # Audio configuration file
 -include $(TOPDIR)hardware/qcom/audio/configs/msm8998/msm8998.mk
+
+USE_CUSTOM_AUDIO_POLICY := 0
 
 PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
 
@@ -328,6 +333,11 @@ TARGET_MOUNT_POINTS_SYMLINKS := false
 
 $(call inherit-product, build/make/target/product/product_launched_with_p.mk)
 
+# For bringup
+WLAN_BRINGUP_NEW_SP := true
+DISP_BRINGUP_NEW_SP := true
+CAM_BRINGUP_NEW_SP := true
+SEC_USERSPACE_BRINGUP_NEW_SP := true
 
 ###################################################################################
 # This is the End of target.mk file.

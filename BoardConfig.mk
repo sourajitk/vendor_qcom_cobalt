@@ -19,6 +19,11 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a73
 
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_DUP_COPY_HEADERS=true
+BUILD_BROKEN_ANDROIDMK_EXPORTS=true
+BUILD_BROKEN_PHONY_TARGETS := true
+
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
@@ -99,7 +104,7 @@ TARGET_USES_COLOR_METADATA := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_KERNEL_VERSION),4.4)
-     BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc1b0000
+     BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc1b0000, androidboot.selinux=permissive
 else
      BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 earlycon=msm_hsl_uart,0xc1b0000
 endif
@@ -117,7 +122,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/ aarch64-linux-androidkernel-
 TARGET_USES_UNCOMPRESSED_KERNEL := false
 
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
@@ -185,7 +190,6 @@ BOARD_VNDK_VERSION := current
 #Flag to enable System SDK Requirements.
 #All vendor APK will be compiled against system_current API set.
 BOARD_SYSTEMSDK_VERSIONS:=28
-
 
 #################################################################################
 # This is the End of BoardConfig.mk file.
