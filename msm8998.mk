@@ -123,6 +123,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := vendor/qcom/opensource/core-utils/
 
 # Audio configuration file
 -include $(TOPDIR)hardware/qcom/audio/configs/msm8998/msm8998.mk
+-include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/msm8998/msm8998.mk
 
 USE_CUSTOM_AUDIO_POLICY := 0
 
