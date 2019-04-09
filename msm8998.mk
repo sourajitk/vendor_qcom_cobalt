@@ -263,9 +263,11 @@ PRODUCT_PACKAGES += update_engine \
 		    update_engine_client \
 		    update_verifier \
 		    bootctrl.msm8998 \
-		    brillo_update_payload \
 		    android.hardware.boot@1.0-impl \
 		    android.hardware.boot@1.0-service
+
+PRODUCT_HOST_PACKAGES += \
+  brillo_update_payload
 
 #Boot control HAL test app
 PRODUCT_PACKAGES_DEBUG += bootctl
