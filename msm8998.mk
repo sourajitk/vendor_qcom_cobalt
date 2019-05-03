@@ -85,7 +85,7 @@ PRODUCT_PROPERTY_OVERRIDES  += \
 
 PRODUCT_NAME := msm8998
 PRODUCT_DEVICE := msm8998
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := qti
 PRODUCT_MODEL := MSM8998 for arm64
 
 # Enable features in video HAL that can compile only on this platform
