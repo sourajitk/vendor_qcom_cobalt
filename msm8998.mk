@@ -120,8 +120,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := vendor/qcom/opensource/core-utils/
 -include $(TOPDIR)hardware/qcom/audio/configs/msm8998/msm8998.mk
 -include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/msm8998/msm8998.mk
 
-USE_CUSTOM_AUDIO_POLICY := 0
-
 PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
 
 #PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
