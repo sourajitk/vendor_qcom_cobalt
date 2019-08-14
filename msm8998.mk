@@ -310,6 +310,9 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 
+# privapp-permissions whitelisting
+PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=enforce
+
 # Kernel modules install path
 # Change to dlkm when dlkm feature is fully enabled
 KERNEL_MODULES_INSTALL := system
