@@ -253,7 +253,8 @@ PRODUCT_AAPT_CONFIG += xlarge large
 #for wlan
 PRODUCT_PACKAGES += \
 	wificond \
-	wifilogd
+	wifilogd \
+	wifilearner
 
 ifeq ($(ENABLE_AB), true)
 #A/B related packages
@@ -308,6 +309,9 @@ PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0-impl \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+
+# privapp-permissions whitelisting
+PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=enforce
 
 # Kernel modules install path
 # Change to dlkm when dlkm feature is fully enabled
