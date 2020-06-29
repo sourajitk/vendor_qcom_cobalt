@@ -264,7 +264,7 @@ PRODUCT_HOST_PACKAGES += \
 #Boot control HAL test app
 PRODUCT_PACKAGES_DEBUG += bootctl
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+#PRODUCT_STATIC_BOOT_CONTROL_HAL := \
   bootctrl.msm8998 \
   librecovery_updater_msm \
   libz \
