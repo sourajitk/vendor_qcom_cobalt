@@ -430,7 +430,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                <instance>oemhook1</instance>
            </interface>
     </hal>
-    <hal format="hidl">
+    <!--<hal format="hidl">
         <name>android.hardware.usb</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -438,7 +438,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IUsb</name>
             <instance>default</instance>
         </interface>
-    </hal>
+    </hal>-->
 
     <!-- Alarm HAL service -->
     <hal format="hidl">
@@ -749,6 +749,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <interface>
             <name>IBluetoothSar</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- improveTouch Service-->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.improvetouch.touchcompanion</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITouchCompanion</name>
+            <instance>TouchCompanionService</instance>
         </interface>
     </hal>
 </manifest>

@@ -16,6 +16,7 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
+
 # Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
 ro.telephony.default_network=22,20
 
@@ -26,9 +27,9 @@ debug.gralloc.enable_fb_ubwc=1
 dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
-
 #Disable Skip Validate
 sdm.debug.disable_skip_validate=1
+
 #property to specify the number of frames to skip before setting hint
 sdm.perf_hint_window=50
 
@@ -56,14 +57,15 @@ mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-
-#13631487 is decimal sum of supported codecs in AAL
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD
 vendor.mm.enable.qcom_parser=13631487
 persist.mm.enable.prefetch=true
 
 #prefer HW codec over SW for thumbnail
 media.stagefright.thumbnail.prefer_hw_codecs=true
+
+# disable PQ feature by default
+vendor.vidc.enc.disable.pq=true
 
 # Additional buffers shared between Camera and Video
 vidc.enc.dcvs.extra-buff-count=2
@@ -110,6 +112,7 @@ af.fast_track_multiplier=1
 
 #property to enable user to access Google WFD settings
 persist.debug.wfd.enable=1
+
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
 
@@ -153,7 +156,6 @@ persist.debug.coresight.config=stm-events
 
 #Disable face beautification
 persist.ts.rtmakeup=false
-
 
 #Expose aux camera for below packages
 vendor.camera.aux.packagelist=org.codeaurora.snapcam
