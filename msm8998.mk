@@ -322,6 +322,10 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.rild.libpath=/system/vendor/lib64/libril-qc
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
+# Disable skip validate
+PRODUCT_PROPERTY_OVERRIDES += \
+  vendor.display.disable_skip_validate=1
+
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
 
