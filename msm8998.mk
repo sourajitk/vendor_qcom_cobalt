@@ -322,6 +322,10 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.rild.libpath=/system/vendor/lib64/libril-qc
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
+# Disable skip validate
+PRODUCT_PROPERTY_OVERRIDES += \
+  vendor.display.disable_skip_validate=1
+
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
 
@@ -334,6 +338,10 @@ WLAN_BRINGUP_NEW_SP := true
 DISP_BRINGUP_NEW_SP := true
 CAM_BRINGUP_NEW_SP := true
 SEC_USERSPACE_BRINGUP_NEW_SP := true
+
+#vendor prop to disable advanced network scanning
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.enableadvancedscan=false
 
 # Enable telephpony ims feature
 PRODUCT_COPY_FILES += \
