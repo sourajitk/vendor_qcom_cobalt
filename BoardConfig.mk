@@ -23,9 +23,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a73
 
 BUILD_BROKEN_DUP_RULES := true
-#BUILD_BROKEN_DUP_COPY_HEADERS=true
-#BUILD_BROKEN_ANDROIDMK_EXPORTS=true
-#BUILD_BROKEN_PHONY_TARGETS := true
 
 BUILD_BROKEN_PREBUILT_ELF_FILES := true
 BUILD_BROKEN_NINJA_USES_ENV_VARS := SDCLANG_AE_CONFIG SDCLANG_CONFIG SDCLANG_SA_ENABLED SDCLANG_CONFIG_AOSP
@@ -36,9 +33,8 @@ BUILD_BROKEN_USES_BUILD_HOST_EXECUTABLE := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 #Enable HW based full disk encryption
-#TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
-
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
 TARGET_NO_KERNEL := false
@@ -72,7 +68,9 @@ endif
 
 # WLAN depmod_vendor_intermidiates remove
 # signed ko file is not copied to correct path
-BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
+ifeq ($(TARGET_KERNEL_VERSION), 4.4)
+    BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
+endif
 
 ifeq ($(ENABLE_AB), true)
 #A/B related defines

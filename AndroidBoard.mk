@@ -30,8 +30,6 @@ ifeq ($(TARGET_KERNEL_SOURCE),)
      TARGET_KERNEL_SOURCE := kernel
 endif
 
-#include $(TARGET_KERNEL_SOURCE)/AndroidKernel.mk
-
 # ../../ prepended to paths because kernel is at ./kernel/msm-x.x
 TEMP_TOP=$(shell pwd)
 TARGET_KERNEL_MAKE_ENV += HOSTCC=$(TEMP_TOP)/$(SOONG_LLVM_PREBUILTS_PATH)/clang

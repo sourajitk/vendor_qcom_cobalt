@@ -72,13 +72,6 @@ on post-fs-data
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/misc/qvr 0770 system system
 
-on early-boot
-    write /sys/kernel/boot_slpi/boot 1
-    chown system system /mnt/vendor/persist/sensors
-    chown system system /mnt/vendor/persist/sensors/sns.reg
-    chown system system /mnt/vendor/persist/sensors/sensors_settings
-    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
-
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
