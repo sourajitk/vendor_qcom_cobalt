@@ -174,9 +174,6 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 #Enable PD locater/notifier
 TARGET_PD_SERVICE_ENABLED := true
 
-#Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := false
-
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
     ifeq ($(WITH_DEXPREOPT),)
